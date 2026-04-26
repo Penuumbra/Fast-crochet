@@ -1,0 +1,2 @@
+# Regras vazias no MVP.
+

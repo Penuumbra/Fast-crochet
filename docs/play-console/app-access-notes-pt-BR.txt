@@ -1,0 +1,7 @@
+O app pode ser avaliado imediatamente apos a instalacao.
+
+Nao e necessario login para gerar diagramas.
+
+A conexao com Google aparece apenas como recurso opcional de backup e restauracao.
+
+Se o revisor nao autorizar o Google, o fluxo principal continua funcionando normalmente.

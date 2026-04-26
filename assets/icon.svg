@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Fio de Camera</title>
+  <desc id="desc">Icone com camera e linhas que lembram fio de croche.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14576c" />
+      <stop offset="100%" stop-color="#0d2f39" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f1c65f" />
+      <stop offset="100%" stop-color="#c96d3d" />
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="56" fill="url(#bg)" />
+  <path
+    d="M62 95c0-11 9-20 20-20h18l11-14c4-5 10-7 16-7h33c6 0 12 2 16 7l11 14h18c11 0 20 9 20 20v74c0 11-9 20-20 20H82c-11 0-20-9-20-20V95Z"
+    fill="#f8f0e4"
+    opacity="0.95"
+  />
+  <circle cx="128" cy="132" r="38" fill="url(#accent)" />
+  <circle cx="128" cy="132" r="18" fill="#f8f0e4" />
+  <path
+    d="M58 176c13-16 31-26 53-30 25-5 43 0 61 8 17 8 31 11 49 5"
+    fill="none"
+    stroke="#f1c65f"
+    stroke-width="10"
+    stroke-linecap="round"
+  />
+  <path
+    d="M61 154c11-12 25-20 42-24 22-5 41-1 55 7"
+    fill="none"
+    stroke="#c96d3d"
+    stroke-width="8"
+    stroke-linecap="round"
+    opacity="0.8"
+  />
+</svg>

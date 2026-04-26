@@ -1,0 +1,7 @@
+Lancamento inicial do Fast Crochet no Google Play com:
+
+- captura por camera
+- envio de referencia visual
+- geracao assistida de diagramas e receitas
+- uso livre no fluxo principal
+- backup opcional com Google
