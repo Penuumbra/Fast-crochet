@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: fast-crochet
+    runtime: node
+    plan: free
+    autoDeploy: true
+    buildCommand: corepack prepare pnpm@10.33.2 --activate && pnpm install --frozen-lockfile
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: OPENAI_MODEL
+        value: gpt-5.4-mini
+      - key: ALLOW_DEMO_SUBSCRIPTION
+        value: "0"
+      - key: DATABASE_URL
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: STRIPE_PRICE_ID
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false
+      - key: PAYMENT_LINK_URL
+        sync: false

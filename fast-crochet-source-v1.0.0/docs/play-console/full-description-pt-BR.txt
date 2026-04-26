@@ -1,0 +1,22 @@
+Fast Crochet ajuda voce a transformar referencias visuais em diagramas e instrucoes de crochet.
+
+Use a camera do dispositivo ou envie uma imagem para analisar:
+
+- 4 estilos de interpretacao da mesma peca
+- resumo visual do modelo
+- materiais sugeridos
+- legenda de pontos
+- diagrama em grade
+- instrucoes de producao
+
+O app esta liberado para uso direto, sem tela de bloqueio no fluxo principal.
+
+Recursos principais:
+
+- captura por camera
+- upload de imagens
+- interpretacao por IA
+- organizacao em estilos
+- backup opcional com Google
+
+Ideal para artesas, crocheteiras, estudios criativos e pessoas que querem acelerar a leitura de referencias visuais.

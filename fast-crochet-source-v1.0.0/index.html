@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Escaneie uma imagem pela camera e receba quatro diagramas de croche com uso livre e backup opcional no Google."
+    />
+    <meta name="theme-color" content="#14576c" />
+    <title>Fast Crochet</title>
+    <link rel="icon" href="/assets/fast-crochet-logo.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/fast-crochet-logo.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Sora:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="ambient-orb ambient-one"></div>
+    <div class="ambient-orb ambient-two"></div>
+
+    <div class="page-shell">
+      <header class="hero panel reveal">
+        <div class="hero-copy">
+          <div class="brand-lockup">
+            <img
+              src="/assets/fast-crochet-logo.png"
+              alt="Logo Fast Crochet"
+              class="brand-logo"
+            />
+            <div class="brand-copy">
+              <strong>Fast Crochet</strong>
+              <span>croche com camera, IA e backup opcional</span>
+            </div>
+          </div>
+          <p class="eyebrow">camera + IA + uso livre</p>
+          <h1>Transforme qualquer referencia em mapa de croche sem travas no meio do caminho.</h1>
+          <p class="hero-text">
+            O app agora esta liberado para uso continuo sem tela de bloqueio.
+            Se voce quiser guardar seu historico e restaurar em outro aparelho,
+            pode conectar sua conta Google apenas para backups.
+          </p>
+          <div class="hero-chips">
+            <span>uso livre sem bloqueio</span>
+            <span>4 estilos por referencia</span>
+            <span>backup opcional com Google</span>
+            <span>funciona bem no celular</span>
+          </div>
+        </div>
+
+        <aside class="hero-note">
+          <p class="note-label">fluxo do produto</p>
+          <ol>
+            <li>Abra a camera ou envie uma foto.</li>
+            <li>Gere os quatro estilos sem bloqueio.</li>
+            <li>Conecte Google so se quiser restaurar backups depois.</li>
+          </ol>
+        </aside>
+      </header>
+
+      <main class="workspace">
+        <section class="panel control-panel reveal">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">acesso</p>
+              <h2>Uso e backup</h2>
+            </div>
+            <p class="section-copy">
+              O uso ficou livre. A conexao com Google passa a ser opcional e serve apenas para backups.
+            </p>
+          </div>
+
+          <article class="membership-card">
+            <div class="membership-head">
+              <div>
+                <p id="accessBadge" class="membership-badge">Carregando</p>
+                <h3 id="accessHeadline">Preparando seu acesso livre</h3>
+              </div>
+              <div class="plan-price-box">
+                <strong id="planPrice">Uso livre</strong>
+                <span id="planProvider">Backup opcional</span>
+              </div>
+            </div>
+
+            <p id="accessCopy" class="membership-copy">
+              O app esta liberado para uso continuo sem bloqueio de trial ou assinatura.
+            </p>
+
+            <div class="meta-pills" id="accessMetaPills"></div>
+
+            <div class="trial-block">
+              <div class="trial-meta">
+                <span>Estado do uso</span>
+                <strong id="trialValue">--</strong>
+              </div>
+              <div class="trial-bar">
+                <div id="trialBarFill" class="trial-bar-fill"></div>
+              </div>
+            </div>
+
+            <div class="account-row">
+              <div>
+                <p class="mini-heading">conta atual</p>
+                <strong id="accountEmail">Uso livre sem login obrigatorio</strong>
+              </div>
+              <button id="logoutButton" type="button" class="ghost-button" hidden>
+                Sair
+              </button>
+            </div>
+
+            <div class="membership-actions">
+              <button id="subscribeButton" type="button" class="primary-button" hidden>
+                Checkout desativado
+              </button>
+              <button id="demoSubscribeButton" type="button" class="secondary-button" hidden>
+                Fluxo legado desativado
+              </button>
+            </div>
+          </article>
+
+          <article class="membership-card backup-card">
+            <div class="membership-head">
+              <div>
+                <p class="membership-badge">backup do Google</p>
+                <h3 id="backupHeadline">Conecte so para sincronizar</h3>
+              </div>
+              <div class="plan-price-box">
+                <strong id="backupConnectionState">Desconectado</strong>
+                <span id="backupAccountEmail">Nenhuma conta conectada</span>
+              </div>
+            </div>
+
+            <p id="backupCopy" class="membership-copy">
+              Seus backups salvam configuracoes e resultados recentes no Google Drive, sem interferir no uso do app.
+            </p>
+
+            <div class="meta-pills" id="backupMetaPills"></div>
+
+            <div class="membership-actions">
+              <button id="googleConnectButton" type="button" class="secondary-button">
+                Conectar Google
+              </button>
+              <button id="googleBackupButton" type="button" class="primary-button" disabled>
+                Fazer backup agora
+              </button>
+              <button id="googleRestoreButton" type="button" class="ghost-button" disabled>
+                Restaurar ultimo backup
+              </button>
+              <button id="googleDisconnectButton" type="button" class="ghost-button" hidden>
+                Desconectar
+              </button>
+            </div>
+          </article>
+
+          <div class="section-heading compact-heading">
+            <div>
+              <p class="eyebrow">entrada</p>
+              <h2>Configuracao da peca</h2>
+            </div>
+          </div>
+
+          <form id="patternForm" class="control-form">
+            <details class="developer-card">
+              <summary>Modo desenvolvedor</summary>
+              <p class="developer-copy">
+                Em publicacao real, a chave da OpenAI fica no servidor. Este bloco
+                existe para testes locais.
+              </p>
+
+              <div class="field-grid top-grid">
+                <label class="field field-span">
+                  <span>Chave OpenAI</span>
+                  <input
+                    id="apiKey"
+                    name="apiKey"
+                    type="password"
+                    placeholder="sk-..."
+                    autocomplete="off"
+                  />
+                </label>
+
+                <label class="field">
+                  <span>Modelo</span>
+                  <input
+                    id="model"
+                    name="model"
+                    type="text"
+                    value="gpt-5.4-mini"
+                    autocomplete="off"
+                  />
+                </label>
+
+                <label class="field remember-field">
+                  <span>Lembrar a chave</span>
+                  <div class="toggle-row">
+                    <input id="rememberKey" name="rememberKey" type="checkbox" />
+                    <small>somente neste navegador</small>
+                  </div>
+                </label>
+              </div>
+            </details>
+
+            <div class="capture-card">
+              <div class="camera-stage">
+                <video
+                  id="camera"
+                  class="camera-feed"
+                  playsinline
+                  autoplay
+                  muted
+                  hidden
+                ></video>
+                <img id="previewImage" class="preview-image" alt="" hidden />
+                <canvas id="snapshotCanvas" hidden></canvas>
+                <div id="cameraPlaceholder" class="camera-placeholder">
+                  <p>Use a camera do celular ou envie uma referencia do rolo, desenho ou peca.</p>
+                </div>
+              </div>
+
+              <div class="capture-actions">
+                <button id="startCameraButton" type="button" class="secondary-button">
+                  Abrir camera
+                </button>
+                <button
+                  id="captureButton"
+                  type="button"
+                  class="secondary-button"
+                  disabled
+                >
+                  Capturar
+                </button>
+                <label class="secondary-button file-button">
+                  Escolher imagem
+                  <input
+                    id="imageInput"
+                    type="file"
+                    accept="image/*"
+                    capture="environment"
+                    hidden
+                  />
+                </label>
+              </div>
+            </div>
+
+            <div class="field-grid">
+              <label class="field">
+                <span>Tipo de peca</span>
+                <input
+                  id="pieceType"
+                  name="pieceType"
+                  type="text"
+                  placeholder="bolsa, blusa, almofada, amigurumi..."
+                />
+              </label>
+
+              <label class="field">
+                <span>Nivel alvo</span>
+                <select id="skillLevel" name="skillLevel">
+                  <option value="iniciante">Iniciante</option>
+                  <option value="intermediario" selected>Intermediario</option>
+                  <option value="avancado">Avancado</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span>Tamanho ou escala</span>
+                <input
+                  id="sizeTarget"
+                  name="sizeTarget"
+                  type="text"
+                  placeholder="35 cm, tamanho M, miniatura..."
+                />
+              </label>
+            </div>
+
+            <label class="field">
+              <span>Observacoes criativas</span>
+              <textarea
+                id="notes"
+                name="notes"
+                rows="4"
+                placeholder="ex.: manter tons terrosos, reforcar alca, deixar mais delicado..."
+              ></textarea>
+            </label>
+
+            <div class="submit-row">
+              <button id="generateButton" type="submit" class="primary-button">
+                Gerar 4 estilos de croche
+              </button>
+              <p id="lockedHint" class="tiny-copy" hidden>
+                O uso esta livre. Conecte Google apenas se quiser sincronizar backups.
+              </p>
+            </div>
+          </form>
+        </section>
+
+        <section class="panel results-panel reveal">
+          <div class="section-heading results-heading">
+            <div>
+              <p class="eyebrow">saida</p>
+              <h2>Diagrama e receita</h2>
+            </div>
+            <div class="result-actions">
+              <button id="downloadJsonButton" type="button" class="ghost-button" disabled>
+                Baixar JSON
+              </button>
+              <button id="printButton" type="button" class="ghost-button" disabled>
+                Imprimir
+              </button>
+            </div>
+          </div>
+
+          <div id="statusBar" class="status-bar">
+            Carregando o modo livre do app.
+          </div>
+
+          <div id="emptyState" class="empty-state">
+            <p class="empty-kicker">pronto para interpretar</p>
+            <h3>Sua imagem vira quatro caminhos de producao.</h3>
+            <p>
+              Depois da captura, o resultado aparece aqui com resumo visual,
+              materiais recomendados, legenda de pontos e instrucoes.
+            </p>
+          </div>
+
+          <section id="resultsSection" hidden>
+            <div class="overview-card">
+              <div>
+                <p class="eyebrow">visao geral</p>
+                <h3 id="pieceName">Peca</h3>
+              </div>
+              <div class="meta-pills" id="metaPills"></div>
+              <p id="visualSummary" class="overview-summary"></p>
+              <p id="productionNote" class="production-note"></p>
+              <div>
+                <p class="mini-heading">materiais sugeridos</p>
+                <ul id="materialsList" class="material-list"></ul>
+              </div>
+            </div>
+
+            <div id="stylesGrid" class="styles-grid"></div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <template id="styleCardTemplate">
+      <article class="style-card">
+        <div class="style-head">
+          <div>
+            <p class="style-tag"></p>
+            <h3 class="style-title"></h3>
+          </div>
+          <span class="difficulty-pill"></span>
+        </div>
+
+        <p class="style-concept"></p>
+
+        <div class="meta-grid">
+          <div class="meta-box">
+            <span class="meta-label">fio</span>
+            <strong class="meta-value yarn-value"></strong>
+          </div>
+          <div class="meta-box">
+            <span class="meta-label">agulha</span>
+            <strong class="meta-value hook-value"></strong>
+          </div>
+          <div class="meta-box meta-wide">
+            <span class="meta-label">tensao</span>
+            <strong class="meta-value gauge-value"></strong>
+          </div>
+        </div>
+
+        <div>
+          <p class="mini-heading">paleta</p>
+          <div class="palette-row"></div>
+        </div>
+
+        <div>
+          <p class="mini-heading">diagrama 12x12</p>
+          <div class="chart-grid"></div>
+        </div>
+
+        <div>
+          <p class="mini-heading">legenda de pontos</p>
+          <div class="legend-list"></div>
+        </div>
+
+        <div>
+          <p class="mini-heading">instrucao de producao</p>
+          <ol class="instruction-list"></ol>
+        </div>
+
+        <div>
+          <p class="mini-heading">acabamento</p>
+          <ul class="finishing-list"></ul>
+        </div>
+      </article>
+    </template>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
